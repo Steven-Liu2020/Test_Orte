@@ -1,0 +1,16 @@
+ifeq ($(CONFIG_OC_ETH_ORTE_EXAMPLES),y)
+
+utils_PROGRAMS = test_publisher test_subscriber test_manager
+
+test_publisher_SOURCES = test_publisher.c
+
+test_subscriber_SOURCES = test_subscriber.c
+
+test_manager_SOURCES = test_manager.c
+
+TARGET_LOADLIBES ?= pthread
+
+lib_LOADLIBES =  orte $(TARGET_LOADLIBES)
+
+endif #CONFIG_OC_ETH_ORTE_EXAMPLES
+
